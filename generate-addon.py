@@ -257,7 +257,7 @@ import subprocess, shutil
 subprocess.run([f"{BUILD_DIR}/build.sh"], check=True)
 
 src_node = f"{BUILD_DIR}/build/Release/db-cross-v4-native.node"
-dst_dir = "/mnt/Storage-Linux/zalo-reverse/app-extracted/native/nativelibs/db-cross-v4/prebuilt/linux/electron/x64"
+dst_dir = "./native/nativelibs/db-cross-v4/prebuilt/linux/electron/x64"
 
 os.makedirs(dst_dir, exist_ok=True)
 shutil.copy2(src_node, f"{dst_dir}/db-cross-v4-native.node")
