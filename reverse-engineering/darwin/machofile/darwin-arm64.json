@@ -1,0 +1,1858 @@
+{
+  "general_info": {
+    "Filename": "db-cross-v4-native.node",
+    "Filesize": 291488,
+    "MD5": "9c83e6086f987ec04b9a53fbc1ee9d1b",
+    "SHA1": "2f3547d1da9b0883d510f9a11a8959a801036b27",
+    "SHA256": "193d5cd248c125eb9eee9f488769d4eb67639b25a82d86d7486c4a8727eb7f34"
+  },
+  "header": {
+    "magic": "MH_MAGIC_64 (64-bit), 0xFEEDFACF",
+    "cputype": "ARM 64-bit",
+    "cpusubtype": "ARM_ALL",
+    "filetype": "BUNDLE",
+    "ncmds": 15,
+    "sizeofcmds": 1864,
+    "flags": "NOUNDEFS, DYLDLINK, TWOLEVEL, WEAK_DEFINES, BINDS_TO_WEAK"
+  },
+  "load_commands": [
+    {
+      "cmd": "LC_SEGMENT_64",
+      "cmdsize": 712
+    },
+    {
+      "cmd": "LC_SEGMENT_64",
+      "cmdsize": 312
+    },
+    {
+      "cmd": "LC_SEGMENT_64",
+      "cmdsize": 392
+    },
+    {
+      "cmd": "LC_SEGMENT_64",
+      "cmdsize": 72
+    },
+    {
+      "cmd": "LC_DYLD_INFO_ONLY",
+      "cmdsize": 48
+    },
+    {
+      "cmd": "LC_SYMTAB",
+      "cmdsize": 24
+    },
+    {
+      "cmd": "LC_DYSYMTAB",
+      "cmdsize": 80
+    },
+    {
+      "cmd": "LC_UUID",
+      "cmdsize": 24
+    },
+    {
+      "cmd": "LC_BUILD_VERSION",
+      "cmdsize": 32
+    },
+    {
+      "cmd": "LC_SOURCE_VERSION",
+      "cmdsize": 16
+    },
+    {
+      "cmd": "LC_LOAD_DYLIB",
+      "cmdsize": 48
+    },
+    {
+      "cmd": "LC_LOAD_DYLIB",
+      "cmdsize": 56
+    },
+    {
+      "cmd": "LC_FUNCTION_STARTS",
+      "cmdsize": 16
+    },
+    {
+      "cmd": "LC_DATA_IN_CODE",
+      "cmdsize": 16
+    },
+    {
+      "cmd": "LC_CODE_SIGNATURE",
+      "cmdsize": 16
+    }
+  ],
+  "load_commands_set": [
+    "LC_BUILD_VERSION",
+    "LC_CODE_SIGNATURE",
+    "LC_DATA_IN_CODE",
+    "LC_DYLD_INFO_ONLY",
+    "LC_DYSYMTAB",
+    "LC_FUNCTION_STARTS",
+    "LC_LOAD_DYLIB",
+    "LC_SEGMENT_64",
+    "LC_SOURCE_VERSION",
+    "LC_SYMTAB",
+    "LC_UUID"
+  ],
+  "segments": [
+    {
+      "segname": "__TEXT",
+      "vaddr": 0,
+      "vsize": 163840,
+      "offset": 0,
+      "size": 163840,
+      "max_vm_protection": 5,
+      "initial_vm_protection": 5,
+      "nsects": 8,
+      "flags": 0,
+      "entropy": 6.752462434391031
+    },
+    {
+      "segname": "__DATA_CONST",
+      "vaddr": 163840,
+      "vsize": 16384,
+      "offset": 163840,
+      "size": 16384,
+      "max_vm_protection": 3,
+      "initial_vm_protection": 3,
+      "nsects": 3,
+      "flags": 16,
+      "entropy": 0.07617795934356791
+    },
+    {
+      "segname": "__DATA",
+      "vaddr": 180224,
+      "vsize": 32768,
+      "offset": 180224,
+      "size": 16384,
+      "max_vm_protection": 3,
+      "initial_vm_protection": 3,
+      "nsects": 4,
+      "flags": 0,
+      "entropy": 0.28253373500202
+    },
+    {
+      "segname": "__LINKEDIT",
+      "vaddr": 212992,
+      "vsize": 98304,
+      "offset": 196608,
+      "size": 94880,
+      "max_vm_protection": 1,
+      "initial_vm_protection": 1,
+      "nsects": 0,
+      "flags": 0,
+      "entropy": 5.123902636868186
+    }
+  ],
+  "dylib_commands": [
+    {
+      "dylib_name_offset": 24,
+      "dylib_timestamp": 2,
+      "dylib_current_version": 124564480,
+      "dylib_compat_version": 65536,
+      "dylib_name": "/usr/lib/libc++.1.dylib"
+    },
+    {
+      "dylib_name_offset": 24,
+      "dylib_timestamp": 2,
+      "dylib_current_version": 88539136,
+      "dylib_compat_version": 65536,
+      "dylib_name": "/usr/lib/libSystem.B.dylib"
+    }
+  ],
+  "dylib_names": [
+    "/usr/lib/libc++.1.dylib",
+    "/usr/lib/libSystem.B.dylib"
+  ],
+  "uuid": "2bcd5ed9-8642-3541-a2d0-5287703a5c07",
+  "entry_point": null,
+  "version_info": null,
+  "code_signature_info": {
+    "signed": true,
+    "signing_status": "Signed with runtime hardening",
+    "certificates_info": {
+      "count": 3,
+      "certificates": [
+        {
+          "index": 0,
+          "size": 5194,
+          "subject": "Contains: Developer ID Certification Authority",
+          "issuer": "Unable to parse",
+          "is_apple_cert": true,
+          "type": "Developer ID Certification Authority"
+        },
+        {
+          "index": 1,
+          "size": 1215,
+          "subject": "Contains: Apple Root CA",
+          "issuer": "Unable to parse",
+          "is_apple_cert": true,
+          "type": "Apple Root CA"
+        },
+        {
+          "index": 2,
+          "size": 1492,
+          "subject": "Contains: Developer ID Application:",
+          "issuer": "Unable to parse",
+          "is_apple_cert": false,
+          "type": "Developer ID Application Certificate"
+        }
+      ]
+    },
+    "entitlements_info": {
+      "count": 4,
+      "entitlements": {
+        "com.apple.security.cs.allow-unsigned-executable-memory": {
+          "type": "boolean",
+          "value": true
+        },
+        "com.apple.security.device.camera": {
+          "type": "boolean",
+          "value": true
+        },
+        "com.apple.security.device.audio-input": {
+          "type": "boolean",
+          "value": true
+        },
+        "com.apple.security.cs.allow-jit": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    },
+    "code_directory": {
+      "version": 132352,
+      "flags": 65536,
+      "hash_offset": 286,
+      "identifier_offset": 96,
+      "special_slots": 5,
+      "signing_flags": [
+        "Runtime"
+      ],
+      "code_slots": 67,
+      "hash_size": 270368,
+      "hash_type": 537001996,
+      "hash_algorithm": "Unknown (537001996)",
+      "identifier": "-v4-native"
+    }
+  },
+  "imported_functions": {
+    "/usr/lib/libc++.1.dylib": [
+      {
+        "name": "__ZNSt12length_errorD1Ev",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt13runtime_errorD1Ev",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt20bad_array_new_lengthD1Ev",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__14coutE",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__15ctypeIcE2idE",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZTIPKc",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZTVN10__cxxabiv117__class_type_infoE",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZTVN10__cxxabiv120__si_class_type_infoE",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZTVN10__cxxabiv121__vmi_class_type_infoE",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZTVSt12length_error",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZdaPv",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZdlPv",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__Znam",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__Znwm",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___gxx_personality_v0",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4findEcm",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNKSt3__16locale9use_facetERNS0_2idE",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNKSt3__18ios_base6getlocEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt11logic_errorC2EPKc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt13exception_ptrD1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt13runtime_errorC1ERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt20bad_array_new_lengthC1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__111this_thread9sleep_forERKNS_6chrono8durationIxNS_5ratioILl1ELl1000000000EEEEE",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKcm",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6insertEmPKc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6resizeEmc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7reserveEm",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9push_backEc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSERKS5_",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE5flushEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEm",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__115__thread_structC1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__115__thread_structD1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__119__thread_local_dataEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__120__throw_system_errorEiPKc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__15mutex4lockEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__15mutex6unlockEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__15mutexD1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__16localeD1Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__16thread4joinEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__18ios_base5clearEj",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt3__19to_stringEi",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZNSt9exceptionD2Ev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZSt17current_exceptionv",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__ZSt9terminatev",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___cxa_allocate_exception",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___cxa_begin_catch",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___cxa_end_catch",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___cxa_free_exception",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___cxa_throw",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      }
+    ],
+    "/usr/lib/libSystem.B.dylib": [
+      {
+        "name": "__DefaultRuneLocale",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___chkstk_darwin",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___stack_chk_guard",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___stderrp",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "dyld_stub_binder",
+        "sources": [
+          "bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "__Unwind_Resume",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___cxa_atexit",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___error",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___maskrune",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___sprintf_chk",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "___stack_chk_fail",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_abort",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_access",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_bzero",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_calloc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_clock",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fclose",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_feof",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_ferror",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fflush",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fopen",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fprintf",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fread",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_free",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fseek",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_ftell",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_fwrite",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_getpid",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_malloc",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_memcpy",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_memmove",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_memset",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_memset_pattern16",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_printf",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_pthread_create",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_pthread_setspecific",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_puts",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_remove",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_rewind",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_sprintf",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_stat",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_strchr",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_strcmp",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_strlen",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_strncmp",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_strncpy",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_strrchr",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      },
+      {
+        "name": "_time",
+        "sources": [
+          "lazy_bind_opcodes",
+          "symtab"
+        ]
+      }
+    ],
+    "<self>": [
+      {
+        "name": "__ZN4Napi7details12CallbackDataIPFNS_5ValueERKNS_12CallbackInfoEES2_E7WrapperEP10napi_env__P20napi_callback_info__",
+        "sources": [
+          "weak_bind_opcodes"
+        ]
+      },
+      {
+        "name": "__ZN4Napi7details12CallbackDataIPFNS_6StringERKNS_12CallbackInfoEES2_E7WrapperEP10napi_env__P20napi_callback_info__",
+        "sources": [
+          "weak_bind_opcodes"
+        ]
+      },
+      {
+        "name": "__ZdaPv",
+        "sources": [
+          "weak_bind_opcodes"
+        ]
+      },
+      {
+        "name": "__ZdlPv",
+        "sources": [
+          "weak_bind_opcodes"
+        ]
+      },
+      {
+        "name": "__Znam",
+        "sources": [
+          "weak_bind_opcodes"
+        ]
+      },
+      {
+        "name": "__Znwm",
+        "sources": [
+          "weak_bind_opcodes"
+        ]
+      }
+    ],
+    "<flat_lookup>": [
+      {
+        "name": "_lzma_code",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_lzma_cputhreads",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_lzma_end",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_lzma_stream_decoder",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_lzma_stream_encoder_mt",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_close_escapable_handle_scope",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_close_handle_scope",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_array",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_array_with_length",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_double",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_error",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_external",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_function",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_object",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_reference",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_string_utf8",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_symbol",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_create_type_error",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_define_properties",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_delete_reference",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_escape_handle",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_fatal_error",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_and_clear_last_exception",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_array_length",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_buffer_info",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_cb_info",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_last_error_info",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_named_property",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_reference_value",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_typedarray_info",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_undefined",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_get_value_string_utf8",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_is_buffer",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_is_exception_pending",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_module_register",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_open_escapable_handle_scope",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_open_handle_scope",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_set_element",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_set_named_property",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_set_property",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_throw",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_napi_typeof",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_zdb_MyAlloc",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      },
+      {
+        "name": "_zdb_MyFree",
+        "sources": [
+          "lazy_bind_opcodes"
+        ]
+      }
+    ],
+    "<unknown>": [
+      {
+        "name": "_lzma_code",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_lzma_cputhreads",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_lzma_end",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_lzma_stream_decoder",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_lzma_stream_encoder_mt",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_close_escapable_handle_scope",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_close_handle_scope",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_array",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_array_with_length",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_double",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_error",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_external",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_function",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_object",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_reference",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_string_utf8",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_symbol",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_create_type_error",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_define_properties",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_delete_reference",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_escape_handle",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_fatal_error",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_and_clear_last_exception",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_array_length",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_buffer_info",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_cb_info",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_last_error_info",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_named_property",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_reference_value",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_typedarray_info",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_undefined",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_get_value_string_utf8",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_is_buffer",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_is_exception_pending",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_module_register",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_open_escapable_handle_scope",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_open_handle_scope",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_set_element",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_set_named_property",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_set_property",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_throw",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_napi_typeof",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_zdb_MyAlloc",
+        "sources": [
+          "symtab"
+        ]
+      },
+      {
+        "name": "_zdb_MyFree",
+        "sources": [
+          "symtab"
+        ]
+      }
+    ]
+  },
+  "exported_symbols": {
+    "<export_trie>": [
+      "_zdb_get_file_size",
+      "_zdb_aes_encrypt",
+      "_zdb_OutFile_Open",
+      "_zdb_MD5_Update",
+      "_zdb_MD5_Init",
+      "_zdb_MD5_Final",
+      "_zdb_InFile_Open",
+      "_zdb_File_Write",
+      "_zdb_File_Seek",
+      "_zdb_File_Read",
+      "_zdb_File_GetLength",
+      "_zdb_File_Construct",
+      "_zdb_File_Close",
+      "_zdb_FileSeqInStream_CreateVTable",
+      "_zalo_encrypt_stream",
+      "_zalo_decrypt_stream",
+      "_writeToStr",
+      "_start_with",
+      "_parse_ios_sticker",
+      "_make_dir",
+      "_make_abort",
+      "_lzma_compress",
+      "_is_string_empty",
+      "_is_equal",
+      "_g_allocCount",
+      "_g_allocCountMid",
+      "_g_allocCountBig",
+      "_g_BigAlloc",
+      "_g_Alloc",
+      "_file_name",
+      "_file_id",
+      "_file_accessible",
+      "_end_with",
+      "_encrypt_stream",
+      "_encrypt_file",
+      "_encode_stream",
+      "_do_init",
+      "_dir_name",
+      "_digestChars",
+      "_del_file",
+      "_decrypt_then_decompress_file",
+      "_decrypt_file",
+      "_decompress",
+      "_decompress_file",
+      "_decode_stream",
+      "_compress_with_level",
+      "_compress_then_encrypt_file",
+      "_compress_file",
+      "_compress_file_with_level",
+      "_aes_set_key",
+      "_aes_gen_tables",
+      "_aes_decrypt",
+      "__ZTVN3tlv6TlvBoxE",
+      "__ZNK3tlv6TlvBox9GetValuesERKi",
+      "__ZNK3tlv6TlvBox9GetAllKeyEv",
+      "__ZNK3tlv6TlvBox19GetSerializedBufferEv",
+      "__ZNK3tlv6TlvBox18GetSerializedBytesEv",
+      "__ZNK3tlv6TlvBox16GetBytesValuePtrEiPPhRi",
+      "__ZNK3tlv6TlvBox14GetStringValueEiRNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+      "__ZNK3tlv6TlvBox14GetStringValueEiPcRi",
+      "__ZNK3tlv6TlvBox14GetObjectValueEiRS0_",
+      "__ZNK3tlv6TlvBox14GetDoubleValueEiRd",
+      "__ZNK3tlv6TlvBox13GetShortValueEiRs",
+      "__ZNK3tlv6TlvBox13GetInt64ValueEiRx",
+      "__ZNK3tlv6TlvBox13GetFloatValueEiRf",
+      "__ZNK3tlv6TlvBox13GetBytesValueEiPhRi",
+      "__ZNK3tlv6TlvBox13GetBytesValueEiPPhRi",
+      "__ZNK3tlv6TlvBox12GetLongValueEiRl",
+      "__ZNK3tlv6TlvBox12GetCharValueEiRc",
+      "__ZNK3tlv6TlvBox12GetBoolValueEiRb",
+      "__ZNK3tlv6TlvBox11GetIntValueEiRi",
+      "__ZNK3tlv6TlvBox10GetTLVListERNSt3__16vectorIiNS1_9allocatorIiEEEE",
+      "__ZNK3tlv6TlvBox10GetNoValueEi",
+      "__ZNK3tlv3Tlv9GetLengthEv",
+      "__ZNK3tlv3Tlv8GetValueEv",
+      "__ZNK3tlv3Tlv7GetTypeEv",
+      "__ZN6ZCUtilC2Eb",
+      "__ZN6ZCUtilC1Eb",
+      "__ZN6ZCUtil9ForceExitEv",
+      "__ZN6ZCUtil7IsErrorEv",
+      "__ZN6ZCUtil6GetOutEPh",
+      "__ZN6ZCUtil6FinishEv",
+      "__ZN6ZCUtil5AddInEPhi",
+      "__ZN6ZCUtil4FreeEv",
+      "__ZN6ZCUtil17FindSuitableLevelEi",
+      "__ZN6ZCUtil17DecompressProcessEP7__sFILERKNSt3__16vectorINS2_5tupleIJNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEibEEENS8_ISB_EEEEi",
+      "__ZN6ZCUtil16IsCompressFinishEv",
+      "__ZN6ZCUtil16GetBufferMaxSizeEv",
+      "__ZN6ZCUtil16CompressProgressEv",
+      "__ZN6ZCUtil14InternalAddOutEPhi",
+      "__ZN6ZCUtil14DecompressFileEP7__sFILES1_",
+      "__ZN6ZCUtil13InternalGetInEPh",
+      "__ZN6ZCUtil11IsQueueFullEv",
+      "__ZN6ZCUtil11InitEncoderERKi",
+      "__ZN6ZCUtil11InitDecoderEv",
+      "__ZN4Napi7details12CallbackDataIPFNS_6StringERKNS_12CallbackInfoEES2_E7WrapperEP10napi_env__P20napi_callback_info__",
+      "__ZN4Napi7details12CallbackDataIPFNS_5ValueERKNS_12CallbackInfoEES2_E7WrapperEP10napi_env__P20napi_callback_info__",
+      "__ZN3tlv6TlvBoxD2Ev",
+      "__ZN3tlv6TlvBoxD1Ev",
+      "__ZN3tlv6TlvBoxD0Ev",
+      "__ZN3tlv6TlvBoxC2Ev",
+      "__ZN3tlv6TlvBoxC1Ev",
+      "__ZN3tlv6TlvBox9SerializeEv",
+      "__ZN3tlv6TlvBox8PutValueEPNS_3TlvE",
+      "__ZN3tlv6TlvBox5ParseEPKhi",
+      "__ZN3tlv6TlvBox14PutStringValueEiRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+      "__ZN3tlv6TlvBox14PutStringValueEiPc",
+      "__ZN3tlv6TlvBox14PutObjectValueEiRKS0_",
+      "__ZN3tlv6TlvBox14PutDoubleValueEid",
+      "__ZN3tlv6TlvBox13PutShortValueEis",
+      "__ZN3tlv6TlvBox13PutInt64ValueEix",
+      "__ZN3tlv6TlvBox13PutFloatValueEif",
+      "__ZN3tlv6TlvBox13PutBytesValueEiPhi",
+      "__ZN3tlv6TlvBox12PutCharValueEic",
+      "__ZN3tlv6TlvBox12PutBoolValueEib",
+      "__ZN3tlv6TlvBox11PutIntValueEii",
+      "__ZN3tlv6TlvBox10PutNoValueEi",
+      "__ZN3tlv3TlvD2Ev",
+      "__ZN3tlv3TlvD1Ev",
+      "__ZN3tlv3TlvC2Ei",
+      "__ZN3tlv3TlvC2Eix",
+      "__ZN3tlv3TlvC2Eis",
+      "__ZN3tlv3TlvC2Eii",
+      "__ZN3tlv3TlvC2Eif",
+      "__ZN3tlv3TlvC2Eid",
+      "__ZN3tlv3TlvC2Eic",
+      "__ZN3tlv3TlvC2Eib",
+      "__ZN3tlv3TlvC2EiRKS0_",
+      "__ZN3tlv3TlvC2EiPhi",
+      "__ZN3tlv3TlvC2EiPc",
+      "__ZN3tlv3TlvC2EiNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+      "__ZN3tlv3TlvC1Ei",
+      "__ZN3tlv3TlvC1Eix",
+      "__ZN3tlv3TlvC1Eis",
+      "__ZN3tlv3TlvC1Eii",
+      "__ZN3tlv3TlvC1Eif",
+      "__ZN3tlv3TlvC1Eid",
+      "__ZN3tlv3TlvC1Eic",
+      "__ZN3tlv3TlvC1Eib",
+      "__ZN3tlv3TlvC1EiRKS0_",
+      "__ZN3tlv3TlvC1EiPhi",
+      "__ZN3tlv3TlvC1EiPc",
+      "__ZN3tlv3TlvC1EiNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+      "__ZN3tlv3Tlv10InitializeEPKvi",
+      "__ZN3AESC2Ei",
+      "__ZN3AESC1Ei",
+      "__ZN3AES9mul_bytesEhh",
+      "__ZN3AES9XorBlocksEPhS0_S0_j",
+      "__ZN3AES9ShiftRowsEPPh",
+      "__ZN3AES8XorWordsEPhS0_S0_",
+      "__ZN3AES8SubBytesEPPh",
+      "__ZN3AES8ShiftRowEPPhii",
+      "__ZN3AES7SubWordEPh",
+      "__ZN3AES7RotWordEPh",
+      "__ZN3AES5xtimeEh",
+      "__ZN3AES4RconEPhi",
+      "__ZN3AES16GetPaddingLengthEj",
+      "__ZN3AES15MixSingleColumnEPh",
+      "__ZN3AES13printHexArrayEPhj",
+      "__ZN3AES13InvMixColumnsEPPh",
+      "__ZN3AES12PaddingNullsEPhjj",
+      "__ZN3AES12KeyExpansionEPhS0_",
+      "__ZN3AES12InvShiftRowsEPPh",
+      "__ZN3AES12EncryptBlockEPhS0_S0_",
+      "__ZN3AES12DecryptBlockEPhS0_S0_",
+      "__ZN3AES11InvSubBytesEPPh",
+      "__ZN3AES11AddRoundKeyEPPhS0_",
+      "__ZN3AES10MixColumnsEPPh",
+      "__ZN3AES10EncryptECBEPhjS0_Rj",
+      "__ZN3AES10EncryptCFBEPhjS0_S0_Rj",
+      "__ZN3AES10EncryptCBCEPhjS0_S0_Rj",
+      "__ZN3AES10DecryptECBEPhjS0_",
+      "__ZN3AES10DecryptCFBEPhjS0_S0_",
+      "__ZN3AES10DecryptCBCEPhjS0_S0_Rj",
+      "__ZN18CrossBackupFormat17decryptENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES6_S6_RS6_",
+      "__ZN18CrossBackupFormat07decryptERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_S8_",
+      "__ZN18CrossBackupFormat014decode_base_64ERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE",
+      "__Z8GetValueRKiPKv",
+      "__Z7GetDataP15circular_buffer",
+      "__Z7EnqueueP15circular_bufferPhm",
+      "__Z7DequeueP15circular_bufferPi",
+      "__Z5CountP15circular_buffer",
+      "__Z4InitN4Napi3EnvENS_6ObjectE",
+      "__Z29GetDataCetainSizeAndFromIndexP15circular_bufferii",
+      "__Z25DequeueUntilACertainIndexP15circular_bufferiPi",
+      "__Z25DecompressAndDecryptDb_V2RKN4Napi12CallbackInfoE",
+      "__Z23EnqueueFromCertainIndexP15circular_bufferPhii",
+      "__Z23CountUntilACertainIndexP15circular_bufferi",
+      "__Z22DecompressAndDecryptDbRKN4Napi12CallbackInfoE",
+      "__Z18ParseAttachChatMsgPKhRKiPN4Napi6ObjectE",
+      "__Z18GetDataCertainSizeP15circular_bufferi",
+      "__Z18DequeueCertainSizeP15circular_bufferi",
+      "__Z16IncreasePositionP15circular_bufferi",
+      "__Z15decompress_fileP7__sFILENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_",
+      "__Z15GetFirstDataPosP15circular_buffer",
+      "__Z14InitBufferSizeP15circular_bufferPhi",
+      "__Z14GetLastDataPosP15circular_buffer",
+      "__Z13parse_bin_netN4Napi6BufferIcEERNS_6ObjectE",
+      "__Z12decrypt_fileP7__sFILENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_",
+      "__Z11swap_uint32j",
+      "__Z11read_headerP7__sFILERiRNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE",
+      "__Z11__napi_InitP10napi_env__P12napi_value__",
+      "__Z11ParseBinNetRKN4Napi12CallbackInfoE",
+      "__Z10GetVersionRKN4Napi12CallbackInfoE",
+      "__Z10EmptyCountP15circular_buffer",
+      "_SeqInStream_Read",
+      "_SeqInStream_ReadByte",
+      "_SeqInStream_Read2",
+      "_SecToRead_CreateVTable",
+      "_SecToLook_CreateVTable",
+      "_RT3",
+      "_RT2",
+      "_RT1",
+      "_RT0",
+      "_RSb",
+      "_RCON",
+      "_MyFree_v1",
+      "_MyAlloc_v1",
+      "_MatchFinder_ReduceOffsets",
+      "_MatchFinder_ReadIfRequired",
+      "_MatchFinder_Normalize3",
+      "_MatchFinder_NeedMove",
+      "_MatchFinder_MoveBlock",
+      "_MatchFinder_Init",
+      "_MatchFinder_Init_2",
+      "_MatchFinder_GetPointerToCurrentPos",
+      "_MatchFinder_GetNumAvailableBytes",
+      "_MatchFinder_Free",
+      "_MatchFinder_Create",
+      "_MatchFinder_CreateVTable",
+      "_MatchFinder_Construct",
+      "_MD5_digestString",
+      "_MD5_digestFile",
+      "_LzmaProps_Decode",
+      "_LzmaEncode",
+      "_LzmaEnc_WriteProperties",
+      "_LzmaEnc_SetProps",
+      "_LzmaEnc_SaveState",
+      "_LzmaEnc_RestoreState",
+      "_LzmaEnc_PrepareForLzma2",
+      "_LzmaEnc_MemPrepare",
+      "_LzmaEnc_MemEncode",
+      "_LzmaEnc_Init",
+      "_LzmaEnc_InitPrices",
+      "_LzmaEnc_GetNumAvailableBytes",
+      "_LzmaEnc_GetCurBuf",
+      "_LzmaEnc_FreeLits",
+      "_LzmaEnc_Finish",
+      "_LzmaEnc_Encode",
+      "_LzmaEnc_Destruct",
+      "_LzmaEnc_Destroy",
+      "_LzmaEnc_Create",
+      "_LzmaEnc_Construct",
+      "_LzmaEnc_CodeOneMemBlock",
+      "_LzmaEncProps_Normalize",
+      "_LzmaEncProps_Init",
+      "_LzmaEncProps_GetDictSize",
+      "_LzmaDecode",
+      "_LzmaDec_Init",
+      "_LzmaDec_InitDicAndState",
+      "_LzmaDec_Free",
+      "_LzmaDec_FreeProbs",
+      "_LzmaDec_DecodeToDic",
+      "_LzmaDec_DecodeToBuf",
+      "_LzmaDec_Allocate",
+      "_LzmaDec_AllocateProbs",
+      "_LookToRead_Init",
+      "_LookToRead_CreateVTable",
+      "_LookInStream_SeekTo",
+      "_LookInStream_Read",
+      "_LookInStream_Read2",
+      "_LookInStream_LookRead",
+      "_KT_init",
+      "_KT3",
+      "_KT2",
+      "_KT1",
+      "_KT0",
+      "_Hc3Zip_MatchFinder_Skip",
+      "_Hc3Zip_MatchFinder_GetMatches",
+      "_GetMatchesSpec1",
+      "_File_WriteEncrypt",
+      "_FileOutStream_CreateVTable",
+      "_FileOutStream_CreateVTableEncrypt",
+      "_FileInStream_CreateVTable",
+      "_FT3",
+      "_FT2",
+      "_FT1",
+      "_FT0",
+      "_FSb",
+      "_Bt3Zip_MatchFinder_Skip",
+      "_Bt3Zip_MatchFinder_GetMatches"
+    ]
+  },
+  "similarity_hashes": {
+    "dylib_hash": "211ec93719409660eb313e86af400818",
+    "entitlement_hash": "ad31cb7060f2bbe606b3f180f8f9b6b1",
+    "export_hash": "aead2b1f25d901c4873c388fd1e295d9",
+    "import_hash": "7b30bbf9b23e23494dffda10cb83aaa8",
+    "symhash": "c1a1ab4d51fb96a76aa06b0de8ca80e7"
+  },
+  "architectures": [
+    "arm64"
+  ]
+}

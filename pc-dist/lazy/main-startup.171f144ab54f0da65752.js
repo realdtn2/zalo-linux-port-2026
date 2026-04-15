@@ -14951,11 +14951,21 @@
                 }
                 async runDeleteMessages(e, t, s) {
                     try {
+                        const r0 = "string" == typeof e.convId && e.convId.startsWith("g") ? e.convId.slice(1) : e.convId;
+                        r0 && r0 !== e.convId && (e = Object(I.a)(Object(I.a)({}, e), {}, {
+                            convId: r0
+                        }));
                         if (e.convId && !this.isNewDeleteEvent(e.convId, e.initialDeleteTime)) return void s(new Vg({
                             code: "CANCEL_DELETE_CONVERSATION",
                             message: `${e.convId} Delete batch messages is canceled`
                         }));
-                        const a = await this.getDeleteInfoByThread(e);
+                        let a = await this.getDeleteInfoByThread(e);
+                        if (!a && "string" == typeof e.convId && e.convId.startsWith("g")) try {
+                            const t = e.convId.slice(1);
+                            a = await this.getDeleteInfoByThread(Object(I.a)(Object(I.a)({}, e), {}, {
+                                convId: t
+                            }))
+                        } catch (i) {}
                         if (!a) throw e.isExistConvInfo && e.isExistPreviewInfo ? new Vg({
                             code: "INVALID_CONVERSATION_DATA",
                             message: `${e.convId} Delete conversation info is invalid`
@@ -15281,12 +15291,14 @@
                     return new Promise((async (t, s) => {
                         try {
                             if (!e.convId) return t(void 0);
+                            const r0 = "string" == typeof e.convId && e.convId.startsWith("g") ? e.convId.slice(1) : e.convId,
+                                o0 = "string" == typeof e.toUid && e.toUid.startsWith("g") ? e.toUid.slice(1) : e.toUid;
                             const s = await Xg({
-                                    convId: e.convId,
+                                    convId: r0,
                                     msgId: e.msgId,
                                     cliMsgId: e.cliMsgId,
                                     fromUid: e.fromUid,
-                                    toUid: e.toUid
+                                    toUid: o0
                                 }),
                                 a = null == s ? void 0 : s.msg,
                                 i = null == s ? void 0 : s.duplicatedMsgIds;

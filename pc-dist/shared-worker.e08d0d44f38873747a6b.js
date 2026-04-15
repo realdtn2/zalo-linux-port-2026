@@ -616,11 +616,34 @@ __SCRIPT_TYPE__ = "renderer",
                     if (!e.globalMsgId) return void this.waitForGlobalId.push(e);
                     const s = e.parsedType || ie.default.normalizeMessageType(e.type);
                     if (s === ae.MSG_UNKNOWN) return void 0;
-                    let r = e.parsedIdTo || this.idStore.get(e.ownerId),
-                        a = e.parsedUidFrom || e.fromId == e.userId ? "0" : this.idStore.get(e.fromId);
+                    const m = e => {
+                            if ("string" != typeof e || !e) return e;
+                            const t = e.indexOf("||");
+                            if (t >= 0) {
+                                const s = e.slice(t + 2).trim();
+                                if (s && ("{" === s[0] || "[" === s[0])) return s
+                            }
+                            return e
+                        },
+                        y = e => {
+                            if ("string" != typeof e || !e) return null;
+                            const t = m(e);
+                            if ("string" != typeof t || !t) return null;
+                            try {
+                                const e = JSON.parse(t);
+                                return e && "object" == typeof e ? e : null
+                            } catch {
+                                return null
+                            }
+                        };
+                    // Linux fallback: preserve raw ids when noise-id mapping is unavailable.
+                    let r = e.parsedIdTo || this.idStore.get(e.ownerId) || e.ownerId,
+                        a = e.parsedUidFrom || (e.fromId == e.userId ? "0" : (this.idStore.get(e.fromId) || e.fromId));
                     if (!a || !r) return void 0;
-                    let i = e.msg,
+                    let i = m(e.msg),
                         o = e.attachData;
+                    const c0 = y(i);
+                    c0 && c0.data && "object" == typeof c0.data && (o.attach || (o.attach = {}), Object.assign(o.attach, c0.data));
                     switch (o.mentions && Array.isArray(o.mentions) && o.mentions.forEach((e => {
                             e.uid = "-1" === e.uid ? "-1" : this.idStore.get(e.uid)
                         })), o.quote && (o.quote.ownerId = this.idStore.get(o.quote.ownerId)), s) {
@@ -705,7 +728,9 @@ __SCRIPT_TYPE__ = "renderer",
                     function d(e, t = "") {
                         return e instanceof Object && Object.keys(e).length ? t : e || t
                     }
-                    l.localDttm = Date.now(), l.src = ae.MSG_SRC.SYNC_MOBILE_DB, l.sequenceId = e.sequenseId, l.uidSenderDel = n, l.msgType !== ae.MSG_UNKNOWN ? t.push(l) : this.logger.zsymb(0, "flow15", (() => ["skip message: unknown type", {
+                    l.localDttm = Date.now(), l.src = ae.MSG_SRC.SYNC_MOBILE_DB, l.sequenceId = e.sequenseId, l.uidSenderDel = n;
+                    const p = e.localPathRaw;
+                    "string" == typeof p && p.length > 3 && /^[\x20-\x7E]+$/.test(p) && (l.localPath = p), l.msgType !== ae.MSG_UNKNOWN ? t.push(l) : this.logger.zsymb(0, "flow15", (() => ["skip message: unknown type", {
                         id: l.cliMsgId,
                         type: e.type
                     }]))
@@ -744,6 +769,8 @@ __SCRIPT_TYPE__ = "renderer",
                 async insertToDb(e) {
                     e = await this._filterDeletedMessages(e);
                     const t = await this._insertMessage(e);
+                    console.error("[SYNC] insertToDb(v1) input=", null == e ? void 0 : e.length, "ok=", null === (s = t.success) || void 0 === s ? void 0 : s.length, "fail=", null === (r = t.fail) || void 0 === r ? void 0 : r.length);
+                    var s, r;
                     return se.mediaRes.start(), await Promise.all([this._insertMedia(t.success), this._insertFilesToResDB(t.success)]), se.mediaRes.end(), await this._insertTTL(t.success), this._sendMediaMsgToMain(t.success), Object(we.b)({
                         messages: e
                     }), t
@@ -941,7 +968,7 @@ __SCRIPT_TYPE__ = "renderer",
                         h = [],
                         g = [];
                     return a.forEach((e => {
-                        const t = this.noiseIdStore.get(e.ownerId);
+                        const t = this.noiseIdStore.get(e.ownerId) || e.ownerId;
                         if (t) {
                             const s = 1 === e.ownerType,
                                 r = {
@@ -1254,8 +1281,9 @@ __SCRIPT_TYPE__ = "renderer",
                     if (!e.globalMsgId) return void this.waitForGlobalId.push(e);
                     const s = e.parsedType || ie.default.normalizeMessageType(e.type);
                     if (s === ae.MSG_UNKNOWN) return void 0;
-                    let r = e.parsedIdTo || this.idStore.get(e.ownerId),
-                        a = e.parsedUidFrom || e.fromId == e.userId ? "0" : this.idStore.get(e.fromId);
+                    // Linux fallback: preserve raw ids when noise-id mapping is unavailable.
+                    let r = e.parsedIdTo || this.idStore.get(e.ownerId) || e.ownerId,
+                        a = e.parsedUidFrom || (e.fromId == e.userId ? "0" : (this.idStore.get(e.fromId) || e.fromId));
                     if (!a || !r) return void 0;
                     let i = e.msg,
                         o = e.attachData;
@@ -1387,6 +1415,8 @@ __SCRIPT_TYPE__ = "renderer",
                 async insertToDb(e) {
                     e = await this._filterDeletedMessages(e);
                     const t = await this._insertMessage(e);
+                    console.error("[SYNC] insertToDb(v2) input=", null == e ? void 0 : e.length, "ok=", null === (s = t.success) || void 0 === s ? void 0 : s.length, "fail=", null === (r = t.fail) || void 0 === r ? void 0 : r.length);
+                    var s, r;
                     return se.mediaRes.start(), await Promise.all([this._insertMedia(t.success), this._insertFilesToResDB(t.success)]), se.mediaRes.end(), await this._insertTTL(t.success), this._sendMediaMsgToMain(t.success), Object(we.b)({
                         messages: e
                     }), t
@@ -1651,10 +1681,12 @@ __SCRIPT_TYPE__ = "renderer",
                 Ve = $znode.path;
             class Ze {
                 constructor(e) {
-                    this.noiseUserId = void 0, this._db = void 0, this.plainUserId = void 0, this.logger = void 0, this.noiseId = void 0, this._db = $zsqlite.createConnection(e.path, {
+                    this.noiseUserId = void 0, this._db = void 0, this.plainUserId = void 0, this.logger = void 0, this.noiseId = void 0, this.backupConvId = "", this._db = $zsqlite.createConnection(e.path, {
                         OPEN_CREATE: !0,
                         OPEN_READWRITE: !0
-                    }), this.logger = e.logger, this.noiseUserId = e.noiseUserId, this.plainUserId = e.plainUserId, this.noiseId = e.noiseId
+                    }), this.logger = e.logger, this.noiseUserId = e.noiseUserId, this.plainUserId = e.plainUserId, this.noiseId = e.noiseId;
+                    const t = /([g]?\d+)\.db$/i.exec(e.path || "");
+                    t && t[1] && (this.backupConvId = t[1].replace(/^g/i, ""))
                 }
                 close() {
                     return this._db.close()
@@ -1692,28 +1724,139 @@ __SCRIPT_TYPE__ = "renderer",
                     return !!t && t.count > 0
                 }
                 convertCrossV2ToCrossV1(e) {
-                    const t = Be[e.MsgType];
-                    if (!t) return null;
-                    const s = qe.parseBinNet(e.BinNet) || {};
-                    if (s.result > 0) return this.logger.zsymb(21, "C2HNDS", ["ParseBinNetFail", "0EO2Al"], {
+                    const t = Be[e.MsgType] || "webchat";
+                    // On Linux, sqlite bindings sometimes return BLOB columns as Uint8Array / ArrayBuffer views or even strings.
+                    // Native parseBinNet requires a Node Buffer; if we pass the wrong type it silently produces empty attachData,
+                    // and the app falls back to raw MsgContent (which becomes the "\u0019..." corruption you see in Media.db).
+                    const _Buf = "undefined" != typeof Buffer && Buffer && Buffer.from ? Buffer : ("undefined" != typeof globalThis && globalThis.Buffer && globalThis.Buffer.from ? globalThis.Buffer : ("function" == typeof require ? (e => {
+                        try {
+                            return require("buffer").Buffer
+                        } catch {
+                            return null
+                        }
+                    })() : null));
+                    let _bin = e.BinNet;
+                    try {
+                        if (_Buf && _bin && !_Buf.isBuffer(_bin)) {
+                            // Cross-realm safe typed-array detection (instanceof can fail between Electron contexts)
+                            if ("undefined" != typeof ArrayBuffer && ArrayBuffer.isView && ArrayBuffer.isView(_bin) && _bin.buffer) {
+                                _bin = _Buf.from(new Uint8Array(_bin.buffer, _bin.byteOffset || 0, _bin.byteLength || _bin.length || 0));
+                            } else if (_bin instanceof Uint8Array) _bin = _Buf.from(_bin);
+                            else if (_bin && _bin.buffer && typeof _bin.byteLength === "number") _bin = _Buf.from(new Uint8Array(_bin.buffer, _bin.byteOffset || 0, _bin.byteLength));
+                            else if (Array.isArray(_bin) && _bin.length && "number" == typeof _bin[0]) _bin = _Buf.from(_bin);
+                            else if (_bin && "Buffer" === _bin.type && Array.isArray(_bin.data)) _bin = _Buf.from(_bin.data);
+                            else if (_bin && Array.isArray(_bin.data) && _bin.data.length && "number" == typeof _bin.data[0]) _bin = _Buf.from(_bin.data);
+                            else if (_bin && "number" == typeof _bin.length && _bin.length > 0 && "number" == typeof _bin[0]) {
+                                // Some sqlite bindings return numeric-indexed objects with a length property.
+                                const a = new Array(_bin.length);
+                                for (let i = 0; i < _bin.length; i++) a[i] = _bin[i] & 255;
+                                _bin = _Buf.from(a);
+                            }
+                            else if ("string" == typeof _bin) {
+                                // Try a few common encodings:
+                                // - hex string
+                                // - base64 string
+                                // - JSON string with \\u00XX escapes (double-escaped)
+                                const b = _bin.trim();
+                                if (/^[0-9a-fA-F]+$/.test(b) && b.length % 2 == 0) _bin = _Buf.from(b, "hex");
+                                else if (/^[A-Za-z0-9+/]+={0,2}$/.test(b) && b.length >= 16) _bin = _Buf.from(b, "base64");
+                                else if (b.includes("\\u00")) {
+                                    const unesc = b.replace(/\\u([0-9a-fA-F]{4})/g, ((_, h) => String.fromCharCode(parseInt(h, 16))));
+                                    _bin = _Buf.from(unesc, "binary");
+                                } else _bin = _Buf.from(b, "binary");
+                            }
+                        }
+                    } catch {}
+                    const s = qe.parseBinNet(_bin) || {};
+                    let r = s.data || {};
+                    const n = e => {
+                        if (null === e || void 0 === e) return "";
+                        const t = String(e);
+                        // Backup filenames/tables keep group id as `g<id>`, while runtime conversation ids are `<id>`.
+                        // If we keep `g` here, many restored messages fail with "Conversation not found".
+                        return /^g\d+$/.test(t) ? t.slice(1) : t
+                    };
+                    // Some backup variants don't keep sender/owner in the same columns.
+                    // Pick robust fallbacks to avoid writing invalid fromUid/toUid (which breaks media fetch auth).
+                    const a = [e.SenderId, e.FromId, e.fromId, e.FromUid, e.fromUid, r.fromD, r.uid, r.ownerId].find((e => null !== e && void 0 !== e && "" !== e));
+                    const i = [e.OwnerId, e.ownerId, e.ToId, e.toId, e.ReceiverId, e.ConversationId, this.backupConvId, this.noiseId].find((e => null !== e && void 0 !== e && "" !== e));
+                    const o = null !== a && void 0 !== a ? a : this.noiseId;
+                    // Linux fallback: keep message import alive even when BinNet parser is incomplete.
+                    // We still preserve msg text and core metadata so conversations can populate.
+                    s.result > 0 && (this.logger.zsymb(21, "C2HNDS", ["ParseBinNetFail", "0EO2Al"], {
                         message: s.error_message,
                         result: s.result,
-                        innerError: s.inner_error
-                    }), null;
-                    const r = s.data;
+                        innerError: s.inner_error,
+                        msgType: e.MsgType,
+                        cliMsgId: e.CliMsgId
+                    }), r = {});
+                    this._debugCrossV2ShapePrinted || (this._debugCrossV2ShapePrinted = !0, console.error("[SYNC] CrossV2 row shape sample " + JSON.stringify({
+                        keys: Object.keys(e || {}),
+                        binNet: {
+                            type: typeof e.BinNet,
+                            hasBuffer: !!_Buf,
+                            isBuffer: _Buf && _Buf.isBuffer ? _Buf.isBuffer(e.BinNet) : !1,
+                            coercedIsBuffer: _Buf && _Buf.isBuffer ? _Buf.isBuffer(_bin) : !1,
+                            len: e.BinNet && (e.BinNet.length || e.BinNet.byteLength || 0),
+                            coercedLen: _bin && (_bin.length || _bin.byteLength || 0),
+                            ctor: e.BinNet && e.BinNet.constructor ? e.BinNet.constructor.name : "",
+                            keys0: e.BinNet && "object" == typeof e.BinNet ? Object.keys(e.BinNet).slice(0, 8) : []
+                        },
+                        parseBinNet: {
+                            result: s.result,
+                            inner_error: s.inner_error,
+                            error_message: s.error_message,
+                            dataKeys0: r && "object" == typeof r ? Object.keys(r).slice(0, 12) : [],
+                            attachsLen: r && r.attachs && r.attachs.length ? r.attachs.length : 0,
+                            attach0Keys0: r && r.attachs && r.attachs[0] && "object" == typeof r.attachs[0] ? Object.keys(r.attachs[0]).slice(0, 16) : [],
+                            debug: s && s.debug ? {
+                                inputLen: s.debug.inputLen,
+                                tlvEndian: s.debug.tlvEndian,
+                                topKeyCount: s.debug.topKeyCount,
+                                topKeys0: s.debug.topKeys && s.debug.topKeys.length ? s.debug.topKeys.slice(0, 16) : [],
+                                attachCount: s.debug.attachCount,
+                                attachCandidateCount: s.debug.attachCandidateCount,
+                                attachCandidates0: s.debug.attachCandidates && s.debug.attachCandidates.length ? s.debug.attachCandidates.slice(0, 6) : []
+                            } : {}
+                        },
+                        senderCandidates: {
+                            SenderId: e.SenderId,
+                            FromId: e.FromId,
+                            fromId: e.fromId,
+                            FromUid: e.FromUid,
+                            fromUid: e.fromUid,
+                            fromD: r.fromD
+                        },
+                        ownerCandidates: {
+                            OwnerId: e.OwnerId,
+                            ownerId: e.ownerId,
+                            ToId: e.ToId,
+                            ReceiverId: e.ReceiverId,
+                            ConversationId: e.ConversationId,
+                            backupConvId: this.backupConvId,
+                            fallbackNoiseId: this.noiseId
+                        },
+                        chosen: {
+                            fromIdRaw: o,
+                            fromIdNormalized: n(o),
+                            ownerIdRaw: i,
+                            ownerIdNormalized: n(i)
+                        }
+                    })));
                     return r.attachs && r.attachs.length > 0 && r.attachs[0] && (e.MsgType === $e.OA ? r.attach = r.attachs : (r.attach = r.attachs[0], e.MsgType !== $e.Sticker && r.attach && delete r.attach.catId)), {
-                        fromId: e.SenderId.toString(),
+                        fromId: n(o),
                         fromName: "",
                         attach: "{}",
                         attachData: r,
                         globalMsgId: e.GlbMsgId,
                         cliMsgId: e.CliMsgId,
                         msg: e.MsgContent,
-                        ownerId: this.noiseId,
+                        ownerId: n(i),
                         ownerType: 0,
                         sequenseId: e.TimeStamp,
                         ts: e.TimeStamp,
                         ttl: e.TTL,
+                        localPathRaw: e.LocalPath,
                         type: t,
                         userId: this.plainUserId
                     }
@@ -1818,7 +1961,7 @@ __SCRIPT_TYPE__ = "renderer",
                         h = [],
                         g = [];
                     return a.forEach((e => {
-                        const t = this.noiseIdStore.get(e.ownerId);
+                        const t = this.noiseIdStore.get(e.ownerId) || e.ownerId;
                         if (t) {
                             const s = 1 === e.ownerType,
                                 r = {
@@ -1932,7 +2075,7 @@ __SCRIPT_TYPE__ = "renderer",
                 async execute(e) {
                     if (e.abort.aborted) return Promise.reject(new Error("Aborted"));
                     const t = st(e.params.format);
-                    return ye(e.params.shouldUseNewMediaDBFlowConfig), t.restoreConversations(e)
+                    return console.error("[SYNC] RESTORE_CONVERSATIONS start format=", e.params.format), ye(e.params.shouldUseNewMediaDBFlowConfig), t.restoreConversations(e).then((t => (console.error("[SYNC] RESTORE_CONVERSATIONS done count=", null != t && t.length ? t.length : 0), t)))
                 }
             }) || rt);
             var at;
@@ -1943,7 +2086,7 @@ __SCRIPT_TYPE__ = "renderer",
                 async execute(e) {
                     if (e.abort.aborted) return Promise.reject(new Error("Aborted"));
                     const t = st(e.params.format);
-                    return ye(e.params.shouldUseNewMediaDBFlowConfig), t.restoreMessages(e)
+                    return console.error("[SYNC] RESTORE_MESSAGES start format=", e.params.format), ye(e.params.shouldUseNewMediaDBFlowConfig), t.restoreMessages(e).then((t => (console.error("[SYNC] RESTORE_MESSAGES done"), t)))
                 }
             }) || at);
             var it;
@@ -1976,6 +2119,12 @@ __SCRIPT_TYPE__ = "renderer",
                 }
                 async _decryptBackupFormat1(e, t, s, r, a) {
                     t = await Object(Qe.a)(t);
+                    try {
+                        const dirList = await Qe.c(t);
+                        console.error("[SYNC] decrypt output dir=", t, "entries=", null == dirList ? void 0 : dirList.length, "sample=", (dirList || []).slice(0, 10));
+                    } catch (err) {
+                        console.error("[SYNC] decrypt output dir inspect failed:", t, err && (err.message || err));
+                    }
                     let i = 0;
                     const {
                         result: o,

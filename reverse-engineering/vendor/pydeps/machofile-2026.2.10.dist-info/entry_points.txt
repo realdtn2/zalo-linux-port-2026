@@ -1,0 +1,2 @@
+[console_scripts]
+machofile = machofile:main

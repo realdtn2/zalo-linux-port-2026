@@ -1,0 +1,16 @@
+../../bin/machofile,sha256=fvowgcIxwR-vDaoPeF9KWXRg1aPGcf-NnCUEZxXlYK8,193
+machofile-2026.2.10.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+machofile-2026.2.10.dist-info/METADATA,sha256=pNj1lCq90iUrrVOlwVsL51b7lXXFq7z4fMM9BUcACrw,17089
+machofile-2026.2.10.dist-info/RECORD,,
+machofile-2026.2.10.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+machofile-2026.2.10.dist-info/WHEEL,sha256=YCfwYGOYMi5Jhw2fU4yNgwErybb2IX5PEwBKV4ZbdBo,91
+machofile-2026.2.10.dist-info/entry_points.txt,sha256=cTElIMOZ5lj0gA5GXxnOiyyfyW6xTEIcT2910p1hCgs,45
+machofile-2026.2.10.dist-info/licenses/LICENSE,sha256=lnTbExHd5v1oiLq0G4pOBNEWlCw6V5TE1zBXfCldNMk,1079
+machofile-2026.2.10.dist-info/top_level.txt,sha256=INqhHnfQ31o89VqR8X-aeFSFJqqrK5ZOCZs_VuEET7c,10
+machofile/LICENSE,sha256=lnTbExHd5v1oiLq0G4pOBNEWlCw6V5TE1zBXfCldNMk,1079
+machofile/README.md,sha256=I80rm4Yo05XqKLl86DrhTymGRH0Q9ybrrD5HF3DpQHg,15509
+machofile/__init__.py,sha256=fhCaNdfDa9tiuis5pCyX6GC66wHich66dzOLkmbeEjg,530
+machofile/__pycache__/__init__.cpython-314.pyc,,
+machofile/__pycache__/machofile.cpython-314.pyc,,
+machofile/doc/API_documentation_machofile.md,sha256=hWLiDKjC7BcwKhtTLuO7CdnDdH-Lm4sXR5h2GYuNBEU,17054
+machofile/machofile.py,sha256=-isAoFCBOLXMCDyzP7OFJuRr25DjXb5EEnTUgu5mYN8,189298
